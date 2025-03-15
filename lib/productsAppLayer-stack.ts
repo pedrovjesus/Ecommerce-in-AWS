@@ -3,7 +3,7 @@ import { Construct } from "constructs";
 import * as lambda from "aws-cdk-lib/aws-lambda";
 import * as ssm from "aws-cdk-lib/aws-ssm";
 
-export class ProductsAppLayer extends cdk.Stack {
+export class ProductsAppLayerStack extends cdk.Stack {
   readonly productsLayer: lambda.LayerVersion;
 
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
