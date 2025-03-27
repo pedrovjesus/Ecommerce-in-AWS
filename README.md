@@ -1,14 +1,30 @@
-# Welcome to your CDK TypeScript project
+# 🚀 ECommerce AWS  
 
-This is a blank project for CDK development with TypeScript.
+This project is a **serverless e-commerce API** built with **AWS CDK**, **Lambda**, **API Gateway**, and **DynamoDB**.  
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+## 🛠️ Technologies Used  
+- **AWS CDK** (Cloud Development Kit)  
+- **AWS Lambda** (Serverless functions)  
+- **API Gateway** (Request routing)  
+- **DynamoDB** (NoSQL database)  
+- **SSM Parameter Store** (Environment variable management)  
+- **Node.js 20**  
 
-## Useful commands
+## 📌 Features  
+✅ Create, update, and delete products  
+✅ Abstraction layer (`Layer`) for code reuse  
+✅ Infrastructure as Code (IaC) with AWS CDK  
 
-* `npm run build`   compile typescript to js
-* `npm run watch`   watch for changes and compile
-* `npm run test`    perform the jest unit tests
-* `npx cdk deploy`  deploy this stack to your default AWS account/region
-* `npx cdk diff`    compare deployed stack with current state
-* `npx cdk synth`   emits the synthesized CloudFormation template
+## 🚀 How to Run the Project  
+1. Install dependencies:  
+   ```bash
+   npm install
+   ```
+2. Configure AWS credentials  
+3. Deploy with AWS CDK:  
+   ```bash
+   cdk deploy
+   ```  
+
+## 📌 Status  
+🛠️ **In development**: new features and improvements are in progress.  
