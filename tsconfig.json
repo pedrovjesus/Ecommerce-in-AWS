@@ -18,7 +18,7 @@
     "experimentalDecorators": true,
     "strictPropertyInitialization": false,
     "typeRoots": ["./node_modules/@types"],
-    "baseUrl": "/",
+    "baseUrl": "./",
     "paths": {
       "/opt/nodejs/productsLayer": [
         "lambda/products/layers/productsLayer/nodejs/productRepository"
