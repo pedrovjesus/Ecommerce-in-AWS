@@ -6,10 +6,10 @@ import {
 import { Product, ProductRepository } from "/opt/nodejs/productsLayer";
 import { DynamoDB } from "aws-sdk";
 
-const productDdb = process.env.PRODUCTS_DDB!;
+const productsDdb = process.env.PRODUCTS_DDB!;
 const ddbClient = new DynamoDB.DocumentClient();
 
-const productRepository = new ProductRepository(ddbClient, productDdb);
+const productRepository = new ProductRepository(ddbClient, productsDdb);
 
 export async function handler(
   event: APIGatewayProxyEvent,
@@ -19,7 +19,7 @@ export async function handler(
   const apiRequestId = event.requestContext.requestId;
 
   console.log(
-    `API Gateway RequestId ${apiRequestId} - Lambda RequestId ${lambdaRequestId}`
+    `API Gateway RequestId: ${apiRequestId} - Lambda RequestId: ${lambdaRequestId}`
   );
 
   if (event.resource === "/products") {
@@ -44,7 +44,7 @@ export async function handler(
           statusCode: 200,
           body: JSON.stringify(productUpdated),
         };
-      } catch (condicionalCheckFailedExpection) {
+      } catch (ConditionalCheckFailedException) {
         return {
           statusCode: 404,
           body: "Product not found",
@@ -59,7 +59,7 @@ export async function handler(
           body: JSON.stringify(product),
         };
       } catch (error) {
-        console.log((<Error>error).message);
+        console.error((<Error>error).message);
         return {
           statusCode: 404,
           body: (<Error>error).message,
